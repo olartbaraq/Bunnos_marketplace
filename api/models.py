@@ -25,6 +25,8 @@ class Breeding_Rabbit(db.Model):
     price = db.Column(db.String(30), nullable=False)
     weight = db.Column(db.Integer(), nullable=False)
     description = db.Column(db.String(1000), nullable=False)
+    filename = db.Column(db.String(70), nullable=False)
+    data = db.Column(db.LargeBinary)
     owner_breed = db.Column(db.Integer(), db.ForeignKey('user.id'))
 
 
@@ -39,6 +41,8 @@ class Meat_Rabbit(db.Model):
     price = db.Column(db.String(30), nullable=False)
     weight = db.Column(db.Integer(), nullable=False)
     description = db.Column(db.String(1000), nullable=False)
+    filename = db.Column(db.String(70), nullable=False)
+    data = db.Column(db.LargeBinary)
     owner_meat = db.Column(db.Integer(), db.ForeignKey('user.id'))
 
     def __repr__(self):
@@ -74,8 +78,3 @@ class User(db.Model, UserMixin):
     def check_password_correction(self, attempted_password):
         return bcrypt.check_password_hash(self.password_hash, attempted_password)
         
-class Photo(db.Model):
-    """ """
-    id = db.Column(db.Integer(), primary_key=True)
-    filename = db.Column(db.String(70), nullable=False)
-    data = db.Column(db.LargeBinary)

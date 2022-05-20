@@ -29,27 +29,37 @@ class RegisterForm(FlaskForm):
     password = PasswordField(label="Password", validators=[Length(min=8, max=60), DataRequired()])
     register = SubmitField(label="Register")
 
+
+    
 class PostAdForm(FlaskForm):
     """ """
-    state = StringField(label="State")
-    title = StringField(label="Title")
-    quantity = IntegerField(label="Quantity")
-    category = StringField(label="Category")
-    price = StringField(label="Price")
-    weight = IntegerField(label="Weight")
-    description = TextAreaField(label="Description")
+    state = StringField(label="State", validators=[DataRequired()])
+    title = StringField(label="Title", validators=[DataRequired()])
+    quantity = IntegerField(label="Quantity", validators=[DataRequired()])
+    category = StringField(label="Category", validators=[DataRequired()])
+    price = StringField(label="Price", validators=[DataRequired()])
+    weight = IntegerField(label="Weight", validators=[DataRequired()])
+    description = TextAreaField(label="Description", validators=[DataRequired()])
     post_ad = SubmitField(label="POST AD")
 
-
-class UploadForm(FlaskForm):
-    """ """
-    filename = FileField(label="filename", validators=[FileRequired()])
-    submit = SubmitField(label="submit")
-
-
+    
 
 class SignInForm(FlaskForm):
     """ """
     email = StringField(label="Email", validators=[DataRequired()])
     password = PasswordField(label="Password", validators=[DataRequired()])
     Login = SubmitField(label="Sign In")
+
+
+class PostAdForm2(FlaskForm):
+    """ """
+    state = StringField(label="State", validators=[DataRequired()])
+    title = StringField(label="Title", validators=[DataRequired()])
+    breed = StringField(label="Breed", validators=[DataRequired()])
+    color = StringField(label="Color", validators=[DataRequired()])
+    age = StringField(label="Age", validators=[DataRequired()])
+    category = StringField(label="Category", validators=[DataRequired()])
+    price = StringField(label="Price", validators=[DataRequired()])
+    weight = IntegerField(label="Weight", validators=[DataRequired()])
+    description = TextAreaField(label="Description", validators=[DataRequired()])
+    post_ad = SubmitField(label="POST AD")

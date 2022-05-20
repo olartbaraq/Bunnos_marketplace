@@ -6,7 +6,7 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: #212121;
+    background: url("../assets/mubbyD.jpg");
     display: flex;
     flex-direction: row;
     
@@ -24,7 +24,8 @@ h6 {
     color: hsl(180, 90%, 35%);
 }
 .how_to_buy a {
-    color: #ffffff;
+    color: #212121;
+    margin: 0 0 0 100px;
 }
 .container_below_how_to_buy {
     display: flex;
@@ -38,20 +39,19 @@ h6 {
     height: 300px;
     width: 300px;
     justify-content: space-between;
-    background-color: #212121;
-    margin: 70px 0 0 30px;
+    background: url("../assets/mubbyADV.jpg");
+    margin: 250px 0 0 30px;
 }
 .container_below_how_to_buy:hover a {
-    color: hsl(180, 90%, 35%);
     text-decoration: none;
 }
 .container_below_how_to_buy:hover p {
-    color: hsl(180, 90%, 35%);
     text-decoration: none;
 }
 .got_something p {
-    color: #ffffff;
+    color: #212121;
     margin: 10px 0 15px 10px;
+    font-size: 20px;
 }
 .together {
     display: flex;
@@ -59,7 +59,7 @@ h6 {
     margin: 30px 0 0 50px;
 }
 .together h3 {
-    margin: 40px 0 5px 40px;
+    margin: 40px 0 5px 50px;
     color: hsl(180, 90%, 35%);
 }
 
@@ -71,7 +71,7 @@ h6 {
     grid-row-gap: 4px;
     height: 700px;
     width: 800px;
-    margin: 20px 0 0 0;
+    margin: 20px 0 0 40px;
 }
 .image-1 {
     height: 250px;
@@ -144,8 +144,8 @@ h6 {
     flex-direction: row;
     justify-content: space-evenly;
     height: 400px;
-    width: 100%;
-    margin: 350px 100px 50px 0;
+    width: 90%;
+    margin: 350px 100px 50px 120px;
     background: #212121;
     padding: 10px 0 0 0;
 }

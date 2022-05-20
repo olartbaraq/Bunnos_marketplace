@@ -1,38 +1,30 @@
-.container_post_an_ad2 {
+.container_post_an_ad {
     width: 1000px;
-    height: 1000px;
-    background-color: #ffffff;
+    height: 1300px;
+    background: repeating-linear-gradient(35deg, hsl(190, 80%, 60%), hsl(190, 80%, 40%), hsl(190, 90%, 60%));
     margin: 30px 0 0 400px;
     padding: 5px 70px 20px 70px;
 }
 
-.text-untop2 h4 {
+.text-untop h4 {
     text-align: center;
     margin: 10px 0 0 0 ;
     padding: 20px;
     font-size: 40px;
 }
-.text-untop2 .clear {
+.text-untop .clear {
     float: right;
     margin: -70px 20px 0 0;
     padding: 20px;
     text-decoration: none;
-    color: hsl(180, 80%, 40%);
+    color: #212121;
     font-size: 20px;
 }
-.text-untop2 .back {
-    float: left;
-    margin: -70px 0 0 20px;
-    padding: 20px;
-    text-decoration: none;
-    color: hsl(180, 80%, 40%);
-    font-size: 20px;
-}
-.text-untop2:hover a {
+.text-untop:hover a {
     color: red;
     transform: scale(1.2);
 }
-.about_ad2 {
+.about_ad {
     width: 100%;
     height: 100px;
     display: flex;
@@ -41,26 +33,29 @@
     margin: 30px 0 0 0 ;
     padding: 10px;
 }
-.about_ad2 .step-1{
-    text-align: center;
-    background-color: hsl(170, 80%, 35%);
-    border: black, 5px, solid;
-    border-radius: 30px;
-    width: 500px;
-    padding: 20px 0 20px 0;
-}
-.about_ad2 .step-2{
+.about_ad .step-2{
     text-align: center;
     background-color: hsl(180, 80%, 40%);
     border: black, 5px, solid;
     border-radius: 30px;
-    width: 500px;
+    width: 1000px;
     padding: 20px 0 20px 0;
     margin-left: -50px;
 }
-.ad-details {
+.category_location2 .Meat-rabbit {
+    text-align: center;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #212121;
+    border: black, 5px, solid;
+    border-radius: 10px;
+    width: 400px;
+    padding: 20px 0 20px 0;
+    margin: 0 0 0 250px;
+}
+.ad-details2 {
     width: 100%;
-    height: 500px;
+    height: 400px;
     display: grid;
     grid-template-rows: 100px 100px 100px;
     grid-template-columns: 100px 100px;
@@ -69,7 +64,11 @@
     margin: 10px 0 0 0 ;
     padding: 10px;
 }
-.ad-details .title {
+.ad-details2 h5 {
+    margin: 30px 0 0 0 ;
+    background-color: hsl(180, 90%, 45%);
+}
+.ad-details2 .title {
     font-size: 20px;
     background-color: #fffff;
     border: black, 5px, solid;
@@ -78,26 +77,7 @@
     height: 50px;
     padding: 20px 0 20px 0;
 }
-.ad-details .quantity {
-    font-size: 20px;
-    background-color: #fffff;
-    border: black, 5px, solid;
-    border-radius: 10px;
-    width: 400px;
-    height: 50px;
-    margin: 0 0 0 -170px;
-    padding: 20px 0 20px 0;
-}
-.ad-details .Category {
-    font-size: 20px;
-    background-color: #fffff;
-    border: black, 5px, solid;
-    border-radius: 10px;
-    width: 400px;
-    height: 50px;
-    padding: 20px 0 20px 0;
-}
-.ad-details .price {
+.ad-details2 .quantity {
     font-size: 20px;
     background-color: #fffff;
     border: black, 5px, solid;
@@ -107,7 +87,7 @@
     margin: 0 0 0 -170px;
     padding: 20px 0 20px 0;
 }
-.ad-details .weight {
+.ad-details2 .Category {
     font-size: 20px;
     background-color: #fffff;
     border: black, 5px, solid;
@@ -116,7 +96,7 @@
     height: 50px;
     padding: 20px 0 20px 0;
 }
-.ad-details .Location {
+.ad-details2 .price {
     font-size: 20px;
     background-color: #fffff;
     border: black, 5px, solid;
@@ -126,43 +106,35 @@
     margin: 0 0 0 -170px;
     padding: 20px 0 20px 0;
 }
-.upload-photo {
+.ad-details2 .weight {
+    font-size: 20px;
+    background-color: #fffff;
+    border: black, 5px, solid;
+    border-radius: 10px;
+    width: 400px;
+    height: 50px;
+    padding: 20px 0 20px 0;
+}
+.ad-details2 .Location {
+    font-size: 20px;
+    background-color: #fffff;
+    border: black, 5px, solid;
+    border-radius: 10px;
+    width: 400px;
+    height: 50px;
+    margin: 0 0 0 -170px;
+    padding: 20px 0 20px 0;
+}
+.upload-photo2 {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-top: 20px;
-}
-.upload-photo form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 100px;
-    width: 200px;
-}
-#submit {
-    width: 150px;
-    background-color: #AFFAB0;
-    border-radius: 10px;
-}
-#submit:hover{
-    background-color: green;
-    transform: scale(1.1); 
+    margin-top: 250px;
 }
 p {
     line-height: 0.8;
 }
-#next {
-    height: 50px;
-    width: 400px;
-    border-radius: 20px;
-    background-color: #AFFAB0;
-    margin: 20px 0 0 250px;
-}
-#next:hover {
-    background-color: green;
-    transform: scale(1.2);
-}
-.ad-details .description {
+.ad-details2 .description {
     font-size: 20px;
     background-color: #fffff;
     border: black, 5px, solid;
@@ -172,18 +144,22 @@ p {
     margin: 20px 0 0 0;
     white-space: wrap;
 }
-#next2 {
+.ad-details .myFile2 {
+    margin: 20px 0 0 0;
+    width: 100px;
+}
+#next {
     height: 50px;
     width: 300px;
     border-radius: 20px;
     background-color: #AFFAB0;
-    margin: 200px 0 0 -350px;
+    margin: 150px 0 0 -350px;
 }
-#next2:hover {
+#next:hover {
     background-color: green;
     transform: scale(1.1);
 }
-.terms-condition p {
+.terms-condition2 p {
     margin: 150px;
     line-height: 1.2;
     white-space: wrap;
