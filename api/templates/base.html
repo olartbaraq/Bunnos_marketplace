@@ -17,7 +17,9 @@
     <link rel="stylesheet" href="../static/styles/meat2-rabbit.css">
     <link rel="stylesheet" href="../static/styles/breeding2-rabbit.css">
     <link rel="stylesheet" href="../static/styles/profile.css">
-    <link rel="shortcut icon" href="../static/assets/icon.ico">
+    <link rel="shortcut icon" href="../static/assets/hnet.com-image.ico">
+
+    <script src="https://kit.fontawesome.com/0a332cb790.js" crossorigin="anonymous"></script>
     
     <title>
       {% block title %}
@@ -27,7 +29,7 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <nav style="height: 60px" class="navbar navbar-expand-lg navbar-light bg-dark">
 	<a style="color: #ffffff" class="navbar-brand" href="{{url_for('home_page')}}">BUNNOS</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		  <span class="navbar-toggler-icon"></span>
@@ -37,21 +39,32 @@
 		  {% if current_user.is_authenticated %}
 		  <ul class="navbar-nav mr-auto">
 		    <li class="nav-item active">
-		      <a style="color: hsl(80, 40%, 50%)" class="nav-link">Welcome, {{ current_user.firstname }} {{  current_user.lastname }}</a>
+		      <a style="color: hsl(80, 40%, 50%); margin: 15px 0 0 0" class="nav-link">Welcome, {{ current_user.firstname }} {{  current_user.lastname }}</a>
 		    </li>
 		    <li class="nav-item active">
-		      <a style="color: #ffffff" class="nav-link" href="{{url_for('logout')}}">Logout</a>
+		      <a style="color: #ffffff; margin: 15px 0 0 0" class="nav-link" href="{{url_for('logout')}}">Logout</a>
 		    </li>
 		    <li class="nav-item dropdown">
-		      <a style="color: #ffffff" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sell</a>
+		      <a style="color: #ffffff; margin: 15px 0 0 0" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sell</a>
 		      <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
 			<a style="color: #ffffff" class="dropdown-item bg-dark" href="{{url_for('breeding_rabbit')}}">Breeding Rabbit</a>
 			<a style="color: #ffffff" class="dropdown-item bg-dark" href="{{url_for('meat_rabbit')}}">Meat Rabbit</a>
 		      </div>
 		    </li>
 		    <li class="nav-item active">
-		      <a style="color: #ffffff; position: relative; left: 900px" class="nav-link" href="{{url_for('profile_page')}}">Profile</a>
-		      </li>
+		      <div class="text-center my-3">
+			  <b-button v-b-tooltip.hover title="Profile">
+			    <a style="color: #ffffff; position: relative; left: 900px;" class="nav-link" href="{{url_for('profile_page')}}"><i class="fa fa-user fa-lg"></i></a>
+			    </b-button>
+		      </div>
+		    </li>
+		    <li class="nav-item active">
+		      <div class="text-center my-3">
+			<b-button v-b-tooltip.hover title="Adverts">
+			  <a style="color: #ffffff; position: relative; left: 800px" class="nav-link" href="{{url_for('profile_page')}}"><i class="fa fa-list-alt fa-lg"></i></a>
+			</b-button>
+			</div>
+		    </li>
 		  </ul>
 		 
 		  {% else %}
@@ -86,7 +99,7 @@
 
       {% block content %}
 
-      {% endblock%}
+      {% endblock %}
       
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

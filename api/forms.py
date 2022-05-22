@@ -38,7 +38,7 @@ class PostAdForm(FlaskForm):
     quantity = IntegerField(label="Quantity", validators=[DataRequired()])
     category = StringField(label="Category", validators=[DataRequired()])
     price = StringField(label="Price", validators=[DataRequired()])
-    weight = IntegerField(label="Weight", validators=[DataRequired()])
+    weight = StringField(label="Weight", validators=[DataRequired()])
     description = TextAreaField(label="Description", validators=[DataRequired()])
     post_ad = SubmitField(label="POST AD")
 
@@ -60,6 +60,6 @@ class PostAdForm2(FlaskForm):
     age = StringField(label="Age", validators=[DataRequired()])
     category = StringField(label="Category", validators=[DataRequired()])
     price = StringField(label="Price", validators=[DataRequired()])
-    weight = IntegerField(label="Weight", validators=[DataRequired()])
+    weight = StringField(label="Weight", validators=[DataRequired()])
     description = TextAreaField(label="Description", validators=[DataRequired()])
     post_ad = SubmitField(label="POST AD")

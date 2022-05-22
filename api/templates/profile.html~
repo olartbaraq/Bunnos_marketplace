@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}
+My profile
+{% endblock %}
+{% block content %}
+<div class="container_under_navbar">
+  <div class="left_panel">
+  </div>
+  <div class="right_panel">
+    </div>
+  </div>
+{% endblock %}

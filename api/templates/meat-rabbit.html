@@ -21,13 +21,13 @@ Post an Ad
       {{ form.quantity(type="number", placeholder="Quantity*", class="quantity") }}
       {{ form.category(placeholder="Category(Live/Processed)*", class="Category") }}
       {{ form.price(type="number", placeholder="Price*", class="price") }}
-      {{ form.weight(type="number", placeholder="Weight* (KG)", class="weight") }}
+      {{ form.weight(type="number", placeholder="Weight* (KG)", step="any", class="weight") }}
       {{ form.state(class="Location", placeholder="Location (State)") }}
       {{ form.description(maxlength="1000", placeholder="Description*", class="description") }}
       <p> </p>
       <h5>Add Photo</h5>
       <p> </p>
-      <input type="file", class="myFile2", name="file" required>
+      <input type="file", class="myFile2", name="file" accept="image/*" width="200px" height="200px" required>
       {{ form.post_ad(id="next", type="submit", value="POST AD") }}
     </form>
     <div class="upload-photo2">
