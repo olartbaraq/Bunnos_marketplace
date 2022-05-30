@@ -25,8 +25,8 @@
 	  <a>BUNNOS</a>
 	</div>
 	<div class="header-section">
-	  <a class="feature-section" href="#">Feature</a>
-	  <a class="about-section" href="#">About</a>
+	  <a class="feature-section" href="#features-description-page">Feature</a>
+	  <a class="about-section" href="#about-section-page">About</a>
 	</div>
 	<div class="contact-section">
 	  <b-button class="github-button" v-b-tooltip.hover title="Github">
@@ -50,26 +50,93 @@
 	<div class="project-description">
 	  <h5>Rabbits have seven letters, so does healthy.</h5>
 	  <br>
+	  <div class="text-align">
 	  <p>Bunnos is an online marketplace specifically for sales</p>
 	  <p>of breeding rabbits and meat rabbits.</p>
 	  <p></p>
 	  <p>This project is aimed at enthusiasts willing to</p>
 	  <p>purchase rabbits at ease for breeding and meat</p>
 	  <p>purposes respectively.</p>
-	  <button class="call-to-action" href="#">GET STARTED</button>
 	  </div>
+	  <button class="call-to-action"><a style="color: green" href="#">GET STARTED</a></button>
+	</div>
       </section>
       <section class="right-side-article">
 	<div class="project-images">
-	<!--<img src="rabbit_pic2.jpg" class="image_1">-->
 	<img src="rabbit_meat2.png" class="image_2">
 	</div>
       </section>
     </article>
+    <a id="features-description-page">
+    <div class="feature-page">
+      <div class="feature-highligts">
+      <p>Bunnos as an online marketplace has introduced some key features for easy posting of ads and buying into such ads.</p>
+      <p>This section highlights three(3) key features implemented on Bunnos</p>
+      <ul>
+	<li><b>Website flexibility in navigation for guests</b></li>
+	<li><b>User Authentication</b></li>
+	<li><b>Escrow Service between Buyer and seller</b></li>
+      </ul>
+      </div>
+      <div class="web-flexible">
+	<div class="describe">
+	<h4>Website flexibility in navigation</h4>
+	  <p>Bunnos as an online marketplace provides the flexibility for both buyers and sellers on the website to navigate some of the areas without much restriction. Buyers wanting to contact a seller of an ad need not sign-up to view ads related to their search results from the homepage. They simply need to search a keyword related to their need and view through various ads returned back to them.</p>
+	<p>Although for cautionary scenarios of scam sellers, such user must sign-up to enjoy Bunnos escrow service that guarantees an easy and smooth transaction between both parties. This is the most recommended action implored to buyer of an ad to take<p>
+	</div>
+	<div class="des-image">
+	  <!-- video goes here-->
+	  <video id="describe-video" controls>
+	    <source src="Website Navigation-1.m4v" type="video/mp4">
+	  </video>
+	</div>
+      </div>
+      <div class="sign-up-before-sell">
+	<div class="des-image2">
+	  <!-- video goes here-->
+	  <video id="describe-video" controls>
+	    <source src="User Authentication.mp4" type="video/mp4">
+	  </video>
+	</div>
+	<div class="describe">
+	<h4>User Authentication</h4>
+	  <p>Bunnos marketplace has implemented a mandatory sign-up process for users desiring to post ads on the website. This has been done to be able to store each users ad easily for retrieving and matching for prospective buyers to easy contact with them.</p>
+	  <p>This also helps registered users to monitor activities like feedback and Client list with succesful transactions</p>
+	</div>
+      </div>
+      <div class="escrow-service">
+	<div class="describe">
+	<h4>Escrow Service between buyer and seller</h4>
+	  <p>Bunnos Marketplace utilizes the use of escrow for both registered buyer and seller. This process ensures that both the seller and buyer finish their transaction and are both satisfactory. The detailed process on the website's homepage explains what is to be done by both parties before a transaction is marked completed.</p>
+	  </div>
+	  <div class="des-image">
+	    <!-- video goes here-->
+	    <video id="describe-video" controls>
+	      <source src="Escrow.m4v" type="video/mp4">
+	    </video>
+	  </div>
+      </div>
+    </div>
+    </a>
+    <a id="about-section-page">
+    <div class="about-page">
+      <div class="description">
+	<h3>What inspired Bunnos?</h3>
+	<p>While Bunnos is a portfolio project for <a href="https://www.alxafrica.com">ALX-Africa Group</a> in conjunction with <a href="https://www.holbertonschool.com">Holberton School of Tulsa</a>. Being a rabbit enthusiast from Oyo State, Nigeria, I have grown fond of rabbits as pets and meat consumption. People think rabbit to be an expensive animal to consume or cater for while neglicting the various advantages they provide being an animal with white meat.</p>
+	<p> As a Rabbit farmer for more than 5 years experience, Rabbits are generally one of the easiest animal to breed, ranging from feed consumption, mating, wastes(which can be used for fertizer and manure).</p>
+	<p>This website is designed to make buying and selling of Rabbits easy in my locale and to serve as awareness to the populace such an advantageous species are not expensive to venture into</p>
+      </div>
+      <div class="button">
+	<p>A Github repository is available to check the code behind Bunnos.</p>
+	<p>Review and make a comment</p>
+	<button class="call-to-action"><a style="color: green" href="https://github.com/olartbaraq/Bunnos_marketplace">VIEW CODE</a></button>
+      </div>
+    </div>
+    </a>
     <footer>
       <hr>
       <p> &copy;2022 Bunnos Market</p>
-      </footer>
+    </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
