@@ -21,8 +21,26 @@
 
 <h2>The Story</h2>
 
-  While Bunnos is a portfolio project for [ALX-Africa Group](https://www.alxafrica.com/) in conjunction with [Holberton School](https://www.holbertonschool.com/)
+While Bunnos is a portfolio project for [ALX-Africa Group](https://www.alxafrica.com/) in conjunction with [Holberton School](https://www.holbertonschool.com/). Being a rabbit enthusiast from Oyo State, Nigeria, I have grown fond of rabbits as pets and meat consumption. People think rabbit to be an expensive animal to consume or cater for while neglicting the various advantages they provide being an animal with white meat.
+As a Rabbit farmer for more than 5 years experience, Rabbits are generally one of the easiest animal to breed, ranging from feed consumption, mating, wastes(which can be used for fertizer and manure).
+This website is designed to make buying and selling of Rabbits easy in my locale and to serve as awareness to the populace such an advantageous species are not expensive to venture into.
+A Kanban board on Trello was utilized throughout in order to keep tasks and communication organized. The front end and the way the pages routing was designed, allowed Bunnos to have more dynamic features without handcuffing the rest of the project. Python Framework(FLASK) allowed the frontend to interact with the backend in a simple and well documented way. We decided to use Flask-SQLALchemy, Jinja 2 templating and  sqlite3 because of modularity and familiarity
+
+Front-end
+  - HTML
+  - CSS
+  - JavaScript
+ Back-end
+  - Python
+ Relational Database
+  - Sqlite 3
+  - Handled with ORM (Flask-SQLAlchemy)
+  - One to Many Relationships for owning of ads posted by users
+ Server / Deployment
+  - Nginx / Gunicorn
+  - AWS EC2 on Ubuntu 16.04
 <h2>Getting Started</h2>
+
 <h2>Screenshots</h2>
 <h2>Features</h2>
 <h2>Built With</h2>
