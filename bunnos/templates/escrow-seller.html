@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}
+Free Market/Escrow
+{% endblock %}
+{% block content %}
+<style>
+  body {
+      height: 70%;
+  }
+  .buyer-form-to-fill {
+      margin-top: 100px;
+  }
+  .address-buyer h2 {
+      color: hsl(180, 80%, 60%);
+      text-align: center;
+      margin-bottom: 100px;
+  }
+</style>
+
+
+<body class="text-center">
+  <div class="buyer-form-to-fill">
+    <div class="address-buyer">
+      <h2>For seamless transaction to hold, Kindly fill in these necessary fields </h2>
+    </div>
+    <div class="container">
+      <form method='POST' class="form-register" style="color:white" enctype="multipart/form-data">
+	<h3 class="h3 mb-3 font-weight-normal">
+	  Please Fill these accurately
+	</h3>
+	{{ form.hidden_tag() }}
+	{{ form.advert_id(class="form-control", placeholder="Ads ID on seller's page", id="ads_id") }}
+	<br>
+	{{ form.price_agreed(class="form-control", type="number", placeholder="Price agreed to receive from Buyer", id="price_agreed") }}
+	<br>
+	<h5>Add delivery video</h5>
+	<input type="file", name="file" accept="video/mp4" required>
+	<br><br>
+	{{ form.submit(class="btn btn-lg btn-primary", type="submit", value="Submit", id="submit3") }}
+      </form>
+    </div>
+  </div>
+  </body>
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% block title %}
+My profile
+{% endblock %}
+{% block content %}
+<div class="container_under_navbar">
+  <div class="overall_left_panel">
+  <div class="left_panel_1">
+    <div class="name_profile_pic">
+      <i class="fa fa-user fa-7x"></i>
+      <h3>{{ current_user.firstname }} {{  current_user.lastname }}</h3>
+      <h5>{{ current_user.phone }}</h5>
+    </div>
+    <hr style="background-color: #212121">
+    <div class="My_adverts_left_panel">
+      <i class="fa fa-list-alt fa-2x"></i>
+      <a style="color: #212121" class="nav" href="{{url_for('profile_page')}}">My adverts: 
+	{{ current_user.meat_rabbit_items.__len__() + current_user.breed_rabbit_items.__len__() }}</a>
+    </div>
+    <hr style="background-color: #212121">
+    <div class="My_feedback_left_panel">
+      <i class="fa fa-comments-o fa-2x"></i>
+      <a style="color: #212121" class="nav" href="{{url_for('profile_page')}}">Feedback</a>
+    </div>
+    <hr style="background-color: #212121">
+    <div class="My_client_left_panel">
+      <i class="fa fa-plug fa-2x" aria-hidden="true"></i>
+      <a style="color: #212121" class="nav" href="{{url_for('profile_page')}}">My Clients</a>
+    </div>
+    <hr style="background-color: #212121">
+    <div class="My_performance_left_panel">
+      <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
+      <a style="color: #212121" class="nav" href="{{url_for('profile_page')}}">Performance</a>
+    </div>
+  </div>
+  <div class="left_panel_2">
+    <div class="My_premium_service_left_panel">
+      <i class="fa fa-diamond fa-2x" aria-hidden="true"></i>
+      <a style="color: #212121" class="nav" href="{{url_for('profile_page')}}">Premium Services</a>
+    </div>
+    <hr style="background-color: #212121">
+   <div class="frequent_question_left_panel">
+    <i class="fa fa-question-circle-o fa-2x" aria-hidden="true"></i>
+    <a style="color: #212121" class="nav" href="{{url_for('profile_page')}}">Frequently Asked Questions</a>
+   </div>
+  </div>
+  </div>
+  <div class="right_panel">
+    <div class="right-panel-header">
+      <h5>My Adverts</h5>
+      <hr style="background-color: #212121">
+      <h4 style="text-align: center">Breeding Rabbit Ads</h4>
+      <table class="table table-hover table-dark">
+	<thead>
+	  <tr>
+	    <th scope"col">State</th>
+	    <th scope"col">Title</th>
+	    <th scope"col">Breed</th>
+	    <th scope"col">Color</th>
+	    <th scope"col">Category</th>
+	    <th scope"col">Age</th>
+	    <th scope"col">Price</th>
+	    <th scope"col">Weight</th>
+	    <th scope"col">Description</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  {% for item in parent_list %}
+	  <tr>
+	    <td>{{ item.state }}</td>
+	    <td>{{ item.title }}</td>
+	    <td>{{ item.breed }}</td>
+	    <td>{{ item.color }}</td>
+	    <td>{{ item.category }}</td>
+	    <td>{{ item.age }}</td>
+	    <td>{{ item.price }}</td>
+	    <td>{{ item.weight }}</td>
+	    <td>{{ item.description }}</td>
+	  </tr>
+	  {% endfor %}
+	</tbody>
+      </table>
+      <br>
+      <hr style="background-color: #212121">
+      <h4 style="text-align: center">Meat Rabbit Ads</h4>
+      <table class="table table-hover table-dark">
+	<thead>
+	  <tr>
+	    <th scope"col">State</th>
+	    <th scope"col">Title</th>
+	    <th scope"col">Quantity</th>
+	    <th scope"col">Category</th>
+	    <th scope"col">Price</th>
+	    <th scope"col">Weight</th>
+	    <th scope"col">Description</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  {% for meat in parent_meat %}
+	  <tr>
+	    <td>{{ meat.state }}</td>
+	    <td>{{ meat.title }}</td>
+	    <td>{{ meat.quantity }}</td>
+	    <td>{{ meat.category }}</td>
+	    <td>{{ meat.price }}</td>
+	    <td>{{ meat.weight }}</td>
+	    <td>{{ meat.description }}</td>
+	  </tr>
+	  {% endfor %}
+	</tbody>
+      </table>
+      <br>
+    </div>
+  </div>
+</div>
+{% endblock %}

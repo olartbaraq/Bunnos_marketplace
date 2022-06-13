@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block title %}
+Free Market
+{% endblock %}
+{% block content %}
+<div class="container_below_navbar">
+  <div class="how_to_buy">
+    <a href="#">How to buy and Sell on Bunnos</a>
+  </div>
+</div>
+<div class="container_below_how_to_buy">
+  <a href="{{url_for('breeding_rabbit')}}" class="got_something">
+    <p>Got Rabbit to sell?</p>
+    <p>Post an advert for free</p>
+  </a>
+  <div class="together">
+    <h3>Recent Ads</h3>
+    <div id="trending-ads">
+      {% for post in breed_posts %}
+      <a href="{{ url_for('breed_post', id=post.id) }}">
+      <div class="image-1">
+	<img style="width: 300px; height: 250px" src="data:image/png;charset=utf-8;base64,{{ post.data}}" alt="{{ post.title }}" id="imgslot"/>
+	<div class="title_price">
+	  {{ post.breed }}
+	  <div class="naira">
+	    &#8358;{{ post.pretty_price }}
+	  </div>
+	</div>
+      </div>
+      </a>
+      {% endfor %}
+
+      {% for post in meat_posts %}
+      <a href="{{ url_for('meat_post', id=post.id) }}">
+	<div class="image-1">
+	  <img style="width: 300px; height: 250px" src="data:image/png;charset=utf-8;base64,{{ post.data}}" alt="{{post.title}}" id="imgslotb"/>
+	  <div class="title_price">
+	    {{ post.quantity }} {{ post.category }} meat rabbits
+	    <div class="naira">
+	      &#8358;{{ post.pretty2_price }}
+	    </div>
+	  </div>
+	</div>
+      </a>
+      {% endfor %}
+      
+    </div>
+  </div>
+</div>      
+</header>
+<footer>
+  <div id="everything-below-header">
+    <div class="About-us">
+      <p>About Us</p>
+      <a href="#">About Bunnos</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+    <div class="Support">
+      <p>Support</p>
+      <a href="#">Support@bunnos.com</a>
+      <a href="#">Safety tips</a>
+      <a href="#">FAQ</a>
+    </div>
+    <div class="Social-media-links">
+      <p>Social Media</p>
+      <a href="https://twitter.com/muba_sekiro">twitter</a>
+      <a href="https://instagram.com/olarrtt">instagram</a>
+      <a href="https://github.com/olartbaraq">GitHub</a>
+    </div>
+  </div>
+  <div class="Copyright">
+    <p>&copy; 2022 Bunnos Market</p>
+  </div>
+</footer>
+{% endblock %}

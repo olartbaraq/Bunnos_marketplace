@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% block title %}
+Meat Post/{{ meat_post.state }}/{{ meat_post.title }}/{{ meat_post.price }}
+{% endblock %}
+{% block content %}
+<style>
+  body {
+      background-color: #212121;
+      height: 1500px;
+  }
+  .navbar-brand {
+      font-family: 'Lobster', sans-serif;
+  }
+  .shadow {
+      color: hsl(180, 90%, 35%);
+      text-align: center;
+  }
+  .whole-body {
+      display: flex;
+      flex-direction: row;
+      background-color: #212121;
+      margin: 10px 0 0 100px;
+  }
+  img {
+      border-radius: 15px;
+      margin-top: 20px;
+  }
+  .title-date {
+      margin-top: 20px;
+      height: 100px;
+      width: 700px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+ }
+ .name-of-seller {
+     width: 150px;
+     height: 70px;
+     background-color: #ffffff;
+     margin: 30px 20px 0 0;
+     text-align: center;
+     text-transform: capitalize;
+     font-size: 25px;
+     padding-bottom: 10px;
+ }
+ .name-of-seller p {
+     color: hsl(180, 90%, 45%);
+ }
+ .right-expand-post {
+     margin: 100px 0 0 70px;
+     display: flex;
+     flex-direction: column;
+     height: 400px;
+     justify-content: space-around;
+ }
+ .price {
+     margin: 0 20px 0 0;
+     height: 55px;
+     width: 150px;
+     background-color: #ffffff;
+     color: green;
+     text-align: center;
+ }
+ .price h3 {
+     padding: 10px;
+ }
+ p {
+     color: #ffffff;
+     line-height: 1.4;
+ }
+ h5 {
+     color: #ffffff;
+ }
+ h4 {
+     color: #ffffff;
+ }
+ ul > li {
+     color: #ffffff;
+ }
+ hr {
+     background-color: #ffffff;
+     size: 10px;
+ }
+</style>
+
+<h3 class="shadow p-3 mb-5 bg-body rounded"><strong>Ad Post</strong></h3>
+<br>
+<div class="whole-body">
+  <div class="left-expand-post">
+    <img style="width: 1020px; height: 900px" src="data:image/png;charset=utf-8;base64,{{ meat_post.data}}" alt="img_data" id="imgslot"/>
+    <div class="title-date">
+      <h4>{{ meat_post.title }}</h4>
+      <p>{{ meat_post.date_created }}  |  <span> </span>{{ meat_post.state }} State</p>
+      </div>
+    <hr>
+    <div class="title-date">
+    <p>{{ meat_post.category }} Rabbit at total weight of {{ meat_post.weight }}Kg<p>
+    <p>{{ meat_post.quantity }} piece(s) available</p>
+    </div>
+    <hr>
+    <div class="title-date">
+    <p>{{ meat_post.description }}</p>
+    <p>contact <b style="color: green; font-size: 20px">{{ meat_post.owner_phone }}</b></p>
+    <p> Ads ID <b>{{ meat_post.advert_id }}</b>
+    </div>
+  </div>
+
+  <div class="right-expand-post">
+    <div class="price">
+      <h3><strong>&#8358;{{ meat_post.pretty2_price }}</strong></h3>
+    </div>
+    <div class="name-of-seller">
+      <p>{{ meat_post.owner_firstname }} {{ meat_post.owner_lastname }}</p>
+    </div>
+    <div class="safety-tips">
+      <h5>Safety Tips</h5>
+      <ul>
+	<li>Don't pay in advance, including for delivery</li>
+	<li>Meet the seller at a safe public place</li>
+	<li>Inspect the item and ensure it's exactly what you want</li>
+	<li>On delivery, check that the item delivered is what was inspected</li>
+	<li>Only pay when you're satisfied</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

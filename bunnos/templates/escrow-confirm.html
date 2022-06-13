@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+Confirm Order Page
+{% endblock %}
+{% block content %}
+<div class="container">
+  <p>The Transaction between {{ buyer_info.buyer_firstname }} {{ buyer_info.buyer_lastname }} will now be concluded</p>
+</div>
+<div class="container">
+  <form methods=['POST','GET'] class="form-register" style="color:white">
+    <h3 class="h3 mb-3 font-weight-normal">
+      Kindly Confirm if order was received successfully
+    </h3>
+    {{ form.hidden_tag() }}
+    {{ form.answer(class="form-control", placeholder="Type Yes or No", id="answer1") }}
+    <br>
+    {{ form.submit(class="btn btn-lg btn-primary", type="submit", value="Order Received", id="submit3") }}
+  </form>
+</div>
+
+{% endblock %}

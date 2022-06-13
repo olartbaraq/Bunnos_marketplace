@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block title %}
+Free Market/Escrow
+{% endblock %}
+{% block content %}
+<style>
+  body {
+      height: 90%;
+  }
+  h1, h4, h5, p {
+      color: white;
+  }
+  .whole-page {
+      margin: 70px;
+  }
+  .header-note {
+      text-align: center;
+      margin: 30px 0 40px 0;
+      height: 130px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+  .buyer-seller {
+      display: flex;
+      flex-direction: column;
+      height: 300px;
+      margin-top: 150px;
+  }
+  .buyer-seller h5 {
+      text-align: center;
+  }
+  .buyer-seller-select {
+      display: flex;
+      justify-content: space-around;
+      margin: 70px 0 0 400px;
+      width: 800px;
+  }
+ .buyer-seller-select button {
+      width: 300px;
+      height: 50px;
+      border-radius: 20px;
+      font-size: 30px;
+  }
+  .notice-buyer-seller {
+      text-align: justify;
+      width: 1000px;
+      margin-left: 400px;
+      color: hsl(180, 80%, 50%);
+  }
+</style>
+
+<div class="whole-page">
+  <div class="header-note">
+    <h1>START TRANSACTION ON BUNNOS ESCROW</h1>
+    <h4>Most Reliable Escrow Service for Buyer and Seller Protection</h4>
+  </div>
+  <div class="buyer-seller">
+    <h5>To start a transaction on Bunnos Escrow platform, kindly select one of the roles listed below.</h5>
+    <div class="buyer-seller-select">
+      <button><a href="{{ url_for('escrow_buyer') }}">I'm the Buyer</a></button>
+      <button><a href="{{ url_for('escrow_seller') }}">I'm the Seller</a></button>
+    </div>
+  </div>
+  <div class="notice-buyer-seller">
+    <p>As a buyer using our escrow service to purchase rabbits from a seller, you are entitled to buyer-protection.</p>
+    <p>This roughly means that we will not release the payment you deposit with us to the seller until they deliver the right product or service to you. </p>
+    <p>As a seller using our escrow platform to sell rabbits to buyers, you are entitled to adequate seller-protection.</p>
+    <p style="line-height: 1.7">This roughly means that the payment received from the buyer is safely kept and will not be returned to the buyer except you default in delivering the right product you advertised.</p>
+  </div>
+</div>
+    
+{% endblock %}
