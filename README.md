@@ -39,9 +39,16 @@ Front-end
  Server / Deployment
   - Nginx / Gunicorn
   - AWS EC2 on Ubuntu 16.04
+
 <h2>Getting Started</h2>
 
+Access it on qutebunnos.tech and create an account today!
+- Must sign up to post an ad bunnos
+- To explore features without logging in, search any item you want to access the ad post.
+
 <h2>Screenshots</h2>
+
+
 <h2>Features</h2>
 <h2>Built With</h2>
 <h2>Future</h2>
