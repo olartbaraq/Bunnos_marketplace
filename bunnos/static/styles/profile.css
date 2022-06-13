@@ -1,0 +1,131 @@
+body {
+    width: 100%;
+    height: 1500px;
+    background-color: #212121;
+}
+.container_under_navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 50px 0 0 90px;
+}
+.overall_left_panel {
+    display: flex;
+    flex-direction: column;
+}
+.container_under_navbar .left_panel_1 {
+    background: repeating-linear-gradient(35deg, hsl(190, 80%, 60%), hsl(190, 80%, 40%), hsl(190, 90%, 60%));
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+}
+.container_under_navbar .right_panel {
+    background: repeating-linear-gradient(35deg, hsl(190, 80%, 60%), hsl(190, 80%, 40%), hsl(190, 90%, 60%));
+    width: 1200px;
+    height: 600px;
+    margin: 0 0 0 40px;
+    border-radius: 10px;
+}
+.name_profile_pic {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    margin: 20px 0 0 0;
+    height: 200px;
+}
+.My_adverts_left_panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 0 0 20px;
+}
+.My_adverts_left_panel .nav {
+    position: relative;
+    right: 230px;
+    margin-top: 5px;
+}
+.My_adverts_left_panel:hover .nav {
+    text-decoration: none;
+}
+.My_feedback_left_panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 0 0 20px;
+}
+.My_feedback_left_panel .nav {
+    position: relative;
+    right: 255px;
+    margin-top: 5px;
+}
+.My_feedback_left_panel:hover .nav {
+    text-decoration: none;
+}
+.My_client_left_panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 0 0 20px;
+}
+.My_client_left_panel .nav {
+    position: relative;
+    right: 250px;
+    margin-top: 5px;
+}
+.My_client_left_panel:hover .nav {
+    text-decoration: none;
+}
+.My_performance_left_panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 0 0 15px;
+}
+.My_performance_left_panel .nav {
+    position: relative;
+    right: 235px;
+    margin: 5px 0 0 0;
+}
+.My_performance_left_panel:hover .nav {
+    text-decoration: none;
+}
+.container_under_navbar .left_panel_2 {
+    background: repeating-linear-gradient(35deg, hsl(190, 80%, 60%), hsl(190, 80%, 40%), hsl(190, 90%, 60%));
+    width: 400px;
+    height: 125px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+.My_premium_service_left_panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0 0 15px;
+}
+.My_premium_service_left_panel .nav {
+    position: relative;
+    right: 200px;
+    margin-top: 5px;
+}
+.My_premium_service_left_panel:hover .nav {
+    text-decoration: none;
+}
+.frequent_question_left_panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0 0 15px;
+}
+.frequent_question_left_panel .nav {
+    position: relative;
+    right: 130px;
+    margin-top: 5px;
+}
+.frequent_question_left_panel:hover .nav {
+    text-decoration: none;
+}
+.right-panel-header h5 {
+    padding: 10px 0 5px 0;
+    margin: 10px 0 0 30px;
+}

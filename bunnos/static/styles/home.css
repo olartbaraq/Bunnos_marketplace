@@ -1,0 +1,155 @@
+.navbar-brand {
+    font-family: 'Lobster', sans-serif;
+}
+.container_below_navbar {
+    height: 300px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: url("../assets/mubbylast.jpg");
+    display: flex;
+    flex-direction: row;
+    
+}
+h6 {
+    text-align: center;
+}
+.how_to_buy {
+    font-size: 30px;
+    padding: 100px 0 0 0;
+    margin: 0 0 0 100px;
+}
+.how_to_buy :hover {
+    text-decoration: none;
+    color: hsl(180, 90%, 35%);
+}
+.how_to_buy a {
+    color: #212121;
+    margin: 0 0 0 100px;
+}
+.container_below_how_to_buy {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 400px;
+}
+.got_something {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 300px;
+    justify-content: space-between;
+    background: url("../assets/mubbyADV.jpg");
+    margin: 250px 0 0 30px;
+}
+/*.container_below_how_to_buy:hover a {
+    text-decoration: none;
+}
+.container_below_how_to_buy:hover p {
+    text-decoration: none;
+}*/
+.got_something p {
+    color: #212121;
+    margin: 10px 0 15px 10px;
+    font-size: 20px;
+}
+.together {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0 0 50px;
+}
+.together h3 {
+    margin: 40px 0 5px 50px;
+    color: hsl(180, 90%, 35%);
+}
+
+#trending-ads {
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    grid-template-rows: 300px 300px 300px 300px 300px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    height: 2500px;
+    width: 1250px;
+    margin: 20px 0 0 40px;
+}
+.image-1 {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 300px;
+    background-color: hsl(180, 50%, 70%);
+    text-align: center;
+    border-radius: 15px;
+    color: #212121;
+}
+.image-1 .title_price {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#everything-below-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 400px;
+    width: 90%;
+    margin: 1400px 100px 50px 120px;
+    background: #212121;
+    padding: 10px 0 0 0;
+}
+.About-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: -40px 0 0 0 ;
+}
+.About-us a {
+    color: #ffffff;
+}
+.About-us p {
+    color: #7EF180;
+    margin: 10px 0 0 0;
+}
+/*.About-us:hover a {
+    color: hsl(190, 90%, 40%);
+    text-decoration: none;
+}*/
+.Support {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: -40px 0 0 0 ;
+}
+.Support a {
+    color: #ffffff;
+}
+.Support p {
+    color: #7EF180;
+    margin: 10px 0 0 0;
+}
+/*a:hover {
+    color: hsl(190, 90%, 40%);
+    text-decoration: none;
+}*/
+.Social-media-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: -40px 0 0 0 ;
+}
+.Social-media-links a {
+    color: #ffffff;
+}
+.Social-media-links p {
+    color: #7EF180;
+    margin: 10px 0 0 0;
+}
+a:hover {
+    color: hsl(190, 90%, 40%);
+    text-decoration: none;
+}
+.Copyright p {
+    color: hsl(180, 90%, 35%);
+    text-align: center;
+}
