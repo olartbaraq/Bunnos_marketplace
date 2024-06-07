@@ -1,74 +1,81 @@
-{% extends 'base.html' %}
-{% block title %}
-Free Market/Escrow
-{% endblock %}
-{% block content %}
+{% extends 'base.html' %} {% block title %} Free Market/Escrow {% endblock %} {%
+block content %}
 <style>
   body {
-      height: 1000px;
+    height: 1000px;
   }
   .buyer-form-to-fill {
-      margin-top: 100px;
+    margin-top: 100px;
   }
   .address-buyer h2 {
-      color: hsl(180, 80%, 60%);
-      text-align: center;
-      margin-bottom: 100px;
+    color: hsl(180, 80%, 60%);
+    text-align: center;
+    margin-bottom: 100px;
   }
   .notice-contain h3 {
-      color: hsl(180, 80%, 60%);
-      margin-top: 30px;
-      text-align: center;
+    color: hsl(180, 80%, 60%);
+    margin-top: 30px;
+    text-align: center;
   }
   .notice-contain p {
-      color:  hsl(180, 80%, 60%);
-      margin-top: 50px;
-      text-align: center;
-      font-size: 30px;
+    color: hsl(180, 80%, 60%);
+    margin-top: 50px;
+    text-align: center;
+    font-size: 30px;
   }
   .call-to-action {
-      margin-top: 30px;
-      height: 40px;
-      width: 150px;
-      border-radius: 10px;
-      background-color: #ffffff;
-      color: green;
+    margin-top: 30px;
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: green;
   }
-  </style>
-
+</style>
 
 <body class="text-center">
-<div class="buyer-form-to-fill">
-  <div class="address-buyer">
-    <h2>For seamless transaction to hold, Kindly fill in these necessary fields </h2>
-  </div>
-  <div class="container">
-    <form method='POST' class="form-register" style="color:white">
-      <h3 class="h3 mb-3 font-weight-normal">
-	Please Fill these accurately
-	</h3>
-      {{ form.hidden_tag() }}
-      {{ form.advert_id(class="form-control", placeholder="Ads ID on seller's page", id="ads_id") }}
-      <br>
-      {{ form.price_agreed(class="form-control", type="number", placeholder="Price agreed to pay to Seller", id="price_agreed") }}
-      <br>
-      {{ form.bank_trans_ref(class="form-control", placeholder="Transaction Reference of payment to escrow account", id="transfer-ref") }}
-      <br>
-      {{ form.submit(class="btn btn-lg btn-primary", type="submit", value="Submit", id="submit3") }}
+  <div class="buyer-form-to-fill">
+    <div class="address-buyer">
+      <h2>
+        For seamless transaction to hold, Kindly fill in these necessary fields
+      </h2>
+    </div>
+    <div class="container">
+      <form method="POST" class="form-register" style="color: white">
+        <h3 class="h3 mb-3 font-weight-normal">Please Fill these accurately</h3>
+        {{ form.hidden_tag() }} {{ form.advert_id(class="form-control",
+        placeholder="Ads ID on seller's page", id="ads_id") }}
+        <br />
+        {{ form.price_agreed(class="form-control", type="number",
+        placeholder="Price agreed to pay to Seller", id="price_agreed") }}
+        <br />
+        {{ form.bank_trans_ref(class="form-control", placeholder="Transaction
+        Reference of payment to escrow account", id="transfer-ref") }}
+        <br />
+        {{ form.submit(class="btn btn-lg btn-primary", type="submit",
+        value="Submit", id="submit3") }}
       </form>
+    </div>
+    <div class="notice-contain">
+      <p>
+        <b
+          >Once order is received, kindly return to this page to confirm
+          order</b
+        >
+      </p>
+      <h3>NOTE: Only Confirm when Order is received successfully.</h3>
+      {% for info in buyer_info %}
+      <p>Confirm order for Ad ID {{ info.advert_id }}</p>
+      <button class="call-to-action" method="DELETE">
+        <a
+          style="color: green"
+          href="{{ url_for('main.delivery', id=info.id) }}"
+          >CONFIRM ORDER</a
+        >
+      </button>
+      {% endfor %}
+    </div>
   </div>
-  <div class="notice-contain">
-    <p><b>Once order is received, kindly return to this page to confirm order</b></p>
-    <h3>NOTE: Only Confirm when Order is received successfully.</h3>
-    {% for info in buyer_info %}
-    <p>Confirm order for Ad ID {{ info.advert_id }}</p>
-    <button class="call-to-action" method='DELETE'>
-      <a style="color: green" href="{{ url_for('delivery', id=info.id) }}">CONFIRM ORDER</a>
-    </button>
-    {% endfor %}
-  </div>
-</div>
 </body>
-
 
 {% endblock %}

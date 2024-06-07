@@ -9,7 +9,7 @@ Free Market
   </div>
 </div>
 <div class="container_below_how_to_buy">
-  <a href="{{url_for('breeding_rabbit')}}" class="got_something">
+  <a href="{{url_for('main.breeding_rabbit')}}" class="got_something">
     <p>Got Rabbit to sell?</p>
     <p>Post an advert for free</p>
   </a>
@@ -17,7 +17,7 @@ Free Market
     <h3>Recent Ads</h3>
     <div id="trending-ads">
       {% for post in breed_posts %}
-      <a href="{{ url_for('breed_post', id=post.id) }}">
+      <a href="{{ url_for('main.breed_post', id=post.id) }}">
       <div class="image-1">
 	<img style="width: 300px; height: 250px" src="data:image/png;charset=utf-8;base64,{{ post.data}}" alt="{{ post.title }}" id="imgslot"/>
 	<div class="title_price">
@@ -31,7 +31,7 @@ Free Market
       {% endfor %}
 
       {% for post in meat_posts %}
-      <a href="{{ url_for('meat_post', id=post.id) }}">
+      <a href="{{ url_for('main.meat_post', id=post.id) }}">
 	<div class="image-1">
 	  <img style="width: 300px; height: 250px" src="data:image/png;charset=utf-8;base64,{{ post.data}}" alt="{{post.title}}" id="imgslotb"/>
 	  <div class="title_price">

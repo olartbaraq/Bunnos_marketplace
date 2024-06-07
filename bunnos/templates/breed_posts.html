@@ -1,23 +1,23 @@
-{% extends 'base.html' %}
-{% block title %}
-Ad Posts
-{% endblock %}
-{% block content %}
+{% extends 'base.html' %} {% block title %} Ad Posts {% endblock %} {% block
+content %}
 <h3 style="color: #ffffff">Ad posts</h3>
-<br>
+<br />
 
 {% for post in breed_posts %}
 <div style="color: #ffffff" class="shadow p-3 mb-5 bg-body rounded">
   <h4>{{ post.title }}</h4>
-  {{ post.breed }} breed at {{ post.category }} stage<br>
-  Location is {{ post.state }} State<br>
-  Age is {{ post.age }} weeks old to be sold at &#8358;{{ post.price }}<br>
-  {{ post.description }}<br>
-  Kindly contact me on {{ post.owner_phone }}<br>
-  <img style="width: 200px; height: 200px" src="data:image/png;charset=utf-8;base64,{{ post.data}}" alt="img_data" id="imgslot"/>
-  <a href="{{ url_for('breed_post', id=post.id) }}">View Ad</a>
-  <br><br>
+  {{ post.breed }} breed at {{ post.category }} stage<br />
+  Location is {{ post.state }} State<br />
+  Age is {{ post.age }} weeks old to be sold at &#8358;{{ post.price }}<br />
+  {{ post.description }}<br />
+  Kindly contact me on {{ post.owner_phone }}<br />
+  <img
+    style="width: 200px; height: 200px"
+    src="data:image/png;charset=utf-8;base64,{{ post.data}}"
+    alt="img_data"
+    id="imgslot"
+  />
+  <a href="{{ url_for('main.breed_post', id=post.id) }}">View Ad</a>
+  <br /><br />
 </div>
-{% endfor %}
-
-{% endblock %}
+{% endfor %} {% endblock %}

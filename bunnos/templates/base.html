@@ -29,7 +29,7 @@
   <body>
     <header>
       <nav style="height: 60px" class="navbar navbar-expand-lg navbar-light bg-dark">
-	<a style="color: #ffffff" class="navbar-brand" href="{{url_for('home_page')}}">BUNNOS</a>
+	<a style="color: #ffffff" class="navbar-brand" href="{{url_for('main.home_page')}}">BUNNOS</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		  <span class="navbar-toggler-icon"></span>
 		</button>
@@ -41,33 +41,33 @@
 		      <a style="color: hsl(80, 40%, 50%); margin: 15px 0 0 0" class="nav-link">Welcome, {{ current_user.firstname }} {{  current_user.lastname }}</a>
 		    </li>
 		    <li class="nav-item active">
-		      <a style="color: #ffffff; margin: 15px 0 0 0" class="nav-link" href="{{url_for('logout')}}">Logout</a>
+		      <a style="color: #ffffff; margin: 15px 0 0 0" class="nav-link" href="{{url_for('main.logout')}}">Logout</a>
 		    </li>
 		    <li class="nav-item dropdown">
 		      <a style="color: #ffffff; margin: 15px 0 0 0" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sell</a>
 		      <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-			<a style="color: #ffffff" class="dropdown-item bg-dark" href="{{url_for('breeding_rabbit')}}">Breeding Rabbit</a>
-			<a style="color: #ffffff" class="dropdown-item bg-dark" href="{{url_for('meat_rabbit')}}">Meat Rabbit</a>
+			<a style="color: #ffffff" class="dropdown-item bg-dark" href="{{url_for('main.breeding_rabbit')}}">Breeding Rabbit</a>
+			<a style="color: #ffffff" class="dropdown-item bg-dark" href="{{url_for('main.meat_rabbit')}}">Meat Rabbit</a>
 		      </div>
 		    </li>
 		    <li class="nav-item active">
 		      <div class="text-center my-3">
 			  <b-button v-b-tooltip.hover title="Profile">
-			    <a style="color: #ffffff; position: relative; left: 900px;" class="nav-link" href="{{url_for('profile_page')}}"><i class="fa fa-user fa-lg"></i></a>
+			    <a style="color: #ffffff; position: relative; left: 900px;" class="nav-link" href="{{url_for('main.profile_page')}}"><i class="fa fa-user fa-lg"></i></a>
 			    </b-button>
 		      </div>
 		    </li>
 		    <li class="nav-item active">
 		      <div class="text-center my-3">
 			<b-button v-b-tooltip.hover title="Adverts">
-			  <a style="color: #ffffff; position: relative; left: 800px" class="nav-link" href="{{url_for('profile_page')}}"><i class="fa fa-list-alt fa-lg"></i></a>
+			  <a style="color: #ffffff; position: relative; left: 800px" class="nav-link" href="{{url_for('main.profile_page')}}"><i class="fa fa-list-alt fa-lg"></i></a>
 			</b-button>
 			</div>
 		    </li>
 		    <li class="nav-item active">
 		      <div class="text-center my-3">
 			<b-button v-b-tooltip.hover title="Escrow">
-			  <a style="color: #ffffff; position: relative; left: 700px;" class="nav-link" href="{{url_for('escrow_page')}}"><i class="fa fa-handshake-o fa-lg"></i></a>
+			  <a style="color: #ffffff; position: relative; left: 700px;" class="nav-link" href="{{url_for('main.escrow_page')}}"><i class="fa fa-handshake-o fa-lg"></i></a>
 			</b-button>
 		      </div>
 		    </li>
@@ -76,14 +76,14 @@
 		  {% else %}
 		  <ul class="navbar-nav mr-auto">
 		    <li class="nav-item active">
-		      <a style="color: #ffffff" class="nav-link" href="{{url_for('sign_in')}}">Sign in</a>
+		      <a style="color: #ffffff" class="nav-link" href="{{url_for('main.sign_in')}}">Sign in</a>
 		    </li>
 		    <li class="nav-item">
-		      <a style="color: #ffffff" href="{{url_for('sign_up')}}" class="nav-link">Sign up</a>
+		      <a style="color: #ffffff" href="{{url_for('main.sign_up')}}" class="nav-link">Sign up</a>
 		    </li>
 		  </ul>
 		  {% endif %}
-		  <form method='POST' class="form-inline my-2 my-lg-0" action="{{url_for('search')}}">
+		  <form method='POST' class="form-inline my-2 my-lg-0" action="{{url_for('main.search')}}">
 		    {{ form.hidden_tag() }}
 		    <input class="form-control mr-sm-2" type="search" name="searched" placeholder="Search" aria-label="Search">
 		    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="searched">Search</button>

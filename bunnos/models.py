@@ -2,10 +2,10 @@
 
 """
 """
-from bunnos import db, login_manager
 from datetime import datetime
-from bunnos import bcrypt, app
-from flask_login import UserMixin, current_user
+from flask_login import UserMixin
+
+from . import db, login_manager, bcrypt
 
 
 @login_manager.user_loader
@@ -13,10 +13,10 @@ def load_user(user_id):
     """ """
     return User.query.get(int(user_id))
 
+
 class Breeding_Rabbit(db.Model):
-    """class that defines the fields to store breed rabbit info in the database 
-    """
-    
+    """class that defines the fields to store breed rabbit info in the database"""
+
     id = db.Column(db.Integer(), primary_key=True)
     state = db.Column(db.String(15), nullable=False)
     title = db.Column(db.String(30), nullable=False)
@@ -29,26 +29,25 @@ class Breeding_Rabbit(db.Model):
     description = db.Column(db.String(1000), nullable=False)
     filename = db.Column(db.String(70), nullable=False)
     data = db.Column(db.String)
-    owner_breed = db.Column(db.Integer(), db.ForeignKey('user.id'))
+    owner_breed = db.Column(db.Integer(), db.ForeignKey("user.id"))
     date_created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     owner_phone = db.Column(db.String(14), nullable=False)
     owner_firstname = db.Column(db.String(30), nullable=False)
     owner_lastname = db.Column(db.String(30), nullable=False)
     advert_id = db.Column(db.String(70), nullable=False)
 
-
     @property
     def pretty_price(self):
         """ """
         if len(str(self.price)) >= 4:
-            return f'{str(self.price)[:-3]},{str(self.price)[-3:]}'
+            return f"{str(self.price)[:-3]},{str(self.price)[-3:]}"
         else:
-            return f'{self.price}'
+            return f"{self.price}"
+
 
 class Meat_Rabbit(db.Model):
-    """class that defines the fields to store breed rabbit info in the database
-    """
-    
+    """class that defines the fields to store breed rabbit info in the database"""
+
     id = db.Column(db.Integer(), primary_key=True)
     state = db.Column(db.String(15), nullable=False)
     title = db.Column(db.String(30), nullable=False)
@@ -59,31 +58,29 @@ class Meat_Rabbit(db.Model):
     description = db.Column(db.String(1000), nullable=False)
     filename = db.Column(db.String(70), nullable=False)
     data = db.Column(db.String)
-    owner_meat = db.Column(db.Integer(), db.ForeignKey('user.id'))
+    owner_meat = db.Column(db.Integer(), db.ForeignKey("user.id"))
     date_created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     owner_phone = db.Column(db.String(14), nullable=False)
     owner_firstname = db.Column(db.String(30), nullable=False)
     owner_lastname = db.Column(db.String(30), nullable=False)
     advert_id = db.Column(db.String(70), nullable=False)
 
-            
     def __repr__(self):
         """string representation of objects"""
-        return ("Meat_Rabbit {} is {}".format(self.id, self.title))
+        return "Meat_Rabbit {} is {}".format(self.id, self.title)
 
-    
     @property
     def pretty2_price(self):
         """ """
         if len(str(self.price)) >= 4:
-            return f'{str(self.price)[:-3]},{str(self.price)[-3:]}'
+            return f"{str(self.price)[:-3]},{str(self.price)[-3:]}"
         else:
-            return f'{self.price}'
+            return f"{self.price}"
 
-    
 
 class User(db.Model, UserMixin):
-    """class that defines the fields to store users in the database """
+    """class that defines the fields to store users in the database"""
+
     id = db.Column(db.Integer(), primary_key=True)
     firstname = db.Column(db.String(30), nullable=False)
     lastname = db.Column(db.String(30), nullable=False)
@@ -91,14 +88,14 @@ class User(db.Model, UserMixin):
     phone = db.Column(db.String(14), nullable=False, unique=True)
     date_created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     password_hash = db.Column(db.String(60), nullable=False)
-    breed_rabbit_items = db.relationship('Breeding_Rabbit', backref='breed_owner', lazy=True)
-    meat_rabbit_items = db.relationship('Meat_Rabbit', backref='meat_owner', lazy=True)
-    
-
+    breed_rabbit_items = db.relationship(
+        "Breeding_Rabbit", backref="breed_owner", lazy=True
+    )
+    meat_rabbit_items = db.relationship("Meat_Rabbit", backref="meat_owner", lazy=True)
 
     def __repr__(self):
         """string representation of objects"""
-        return ("User {} is {}".format(self.id, self.firstname))
+        return "User {} is {}".format(self.id, self.firstname)
 
     @property
     def password(self):
@@ -106,15 +103,17 @@ class User(db.Model, UserMixin):
 
     @password.setter
     def password(self, plain_text_password):
-        self.password_hash = bcrypt.generate_password_hash(plain_text_password).decode('utf-8')
+        self.password_hash = bcrypt.generate_password_hash(plain_text_password).decode(
+            "utf-8"
+        )
 
     def check_password_correction(self, attempted_password):
         return bcrypt.check_password_hash(self.password_hash, attempted_password)
-        
 
 
 class Escrow_buyer(db.Model):
     """ """
+
     id = db.Column(db.Integer(), primary_key=True)
     advert_id = db.Column(db.String(70), nullable=False)
     price_agreed = db.Column(db.String(10), nullable=False)
@@ -124,9 +123,9 @@ class Escrow_buyer(db.Model):
     email = db.Column(db.String(50), nullable=False)
 
 
-                            
 class Escrow_seller(db.Model):
     """ """
+
     id = db.Column(db.Integer(), primary_key=True)
     advert_id = db.Column(db.String(70), nullable=False)
     price_agreed = db.Column(db.String(10), nullable=False)
@@ -137,4 +136,6 @@ class Escrow_seller(db.Model):
 
     def __repr__(self):
         """string representation of objects"""
-        return ("Ad id is {} and price agreed is  {}".format(self.advert_id, self.price_agreed))
+        return "Ad id is {} and price agreed is  {}".format(
+            self.advert_id, self.price_agreed
+        )
